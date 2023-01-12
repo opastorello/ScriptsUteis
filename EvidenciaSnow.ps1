@@ -1,5 +1,5 @@
-$folder = "C:\Program Files\Snow\Snow Agent"
-$screenshotFolder = "C:\screenshots"
+$folder = "C:\Program Files\Snow Software\Inventory\Agent"
+$screenshotFolder = "\\server\evidencias"
 $computerName = hostname
 
 #Abre uma sessão como administrador
