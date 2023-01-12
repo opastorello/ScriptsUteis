@@ -21,6 +21,6 @@ foreach ($server in $servers) {
     }
     catch {
         # Exibir uma mensagem de erro se não for possível obter informações do servidor
-        Write-Host "Não é possível obter informações de armazenamento para $server. Erro: $($_.Exception.Message)"
+        Write-Host "Não é possível obter informações de armazenamento do servidor: $server. Erro: $($_.Exception.Message)"
     }
 }
