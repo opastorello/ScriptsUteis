@@ -15,8 +15,11 @@ $Win32API = Add-Type -MemberDefinition '
 [DllImport("user32.dll")] public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);' -Name 'Win32API' -Namespace Win32Functions -PassThru
 $Win32API::ShowWindow($window, 3)
 
-#Executa dois comandos como administrador
-Start-Process PowerShell -Verb RunAs -ArgumentList "-Command &{snowagent.exe scan; snowagent.exe send}"
+#Isso irá mostrar uma janela para que o usuário insira suas credenciais
+$credentials = Get-Credential
+
+#Executa três comandos utilizando as credenciais
+Start-Process PowerShell -Verb RunAs -Credential $credentials -ArgumentList "-Command &{snowagent.exe scan; snowagent.exe send; hostname}"
 
 #Efetua screenshot da tela inteira e salva na pasta especificada com o nome do computador
 Add-Type -AssemblyName System.Windows.Forms
