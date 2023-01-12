@@ -1,4 +1,4 @@
-$folder = "C:\example"
+$folder = "C:\Program Files\Snow\Snow Agent"
 $screenshotFolder = "C:\screenshots"
 $computerName = hostname
 
@@ -16,7 +16,7 @@ $Win32API = Add-Type -MemberDefinition '
 $Win32API::ShowWindow($window, 3)
 
 #Executa dois comandos como administrador
-Start-Process PowerShell -Verb RunAs -ArgumentList "-Command &{comando1; comando2}"
+Start-Process PowerShell -Verb RunAs -ArgumentList "-Command &{snowagent.exe scan; snowagent.exe send}"
 
 #Efetua screenshot da tela inteira e salva na pasta especificada com o nome do computador
 Add-Type -AssemblyName System.Windows.Forms
